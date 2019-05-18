@@ -28,6 +28,6 @@ end
 
 
 Spree.user_class = "Spree::User"
-Spree::SocialConfig[:path_prefix] = '/u/users/auth'
-OmniAuth.config.full_host = "http://localhost:4200/"
+Spree::SocialConfig[:path_prefix] = 'u/users/auth'
+OmniAuth.config.full_host = "http://localhost:4200"
 Devise.omniauth_path_prefix = "u/users/auth"
