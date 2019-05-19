@@ -7,16 +7,13 @@ Rails.application.routes.draw do
   #
   # We ask that you don't use the :as option here, as Spree relies on it being
   # the default of "spree".
-  mount Spree::Core::Engine, at: '/u'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :spree_user,
              class_name: Spree::User,
              only: [:omniauth_callbacks],
              controllers: { omniauth_callbacks: 'spree/omniauth_callbacks' },
              path: Spree::SocialConfig[:path_prefix]
 
-  as :spree_user do
-    get 'root', :to => 'spree/home#index', :as => :spree_user_root
-  end
+  mount Spree::Core::Engine, at: '/u'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 
