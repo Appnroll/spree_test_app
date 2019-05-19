@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   # the default of "spree".
   mount Spree::Core::Engine => '/u'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :spree_user,
+             class_name: Spree::User,
+             only: [:omniauth_callbacks],
+             controllers: { omniauth_callbacks: 'spree/omniauth_callbacks' },
+             path: "u/users"
 end
+
