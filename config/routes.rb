@@ -13,6 +13,6 @@ Rails.application.routes.draw do
              class_name: Spree::User,
              only: [:omniauth_callbacks],
              controllers: { omniauth_callbacks: 'spree/omniauth_callbacks' },
-             path: "u/users"
+             path: Spree::SocialConfig[:path_prefix]
 end
 
