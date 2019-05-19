@@ -29,3 +29,4 @@ end
 
 Spree.user_class = "Spree::User"
 Spree::SocialConfig[:path_prefix] = "u/users"
+Devise.omniauth_path_prefix = "/u/users/auth"
